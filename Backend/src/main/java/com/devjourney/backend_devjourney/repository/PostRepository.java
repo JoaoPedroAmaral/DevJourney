@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.devjourney.backend_devjourney.model.Post;
 
 public interface PostRepository extends JpaRepository<Post, Long>{
-	List<Post> findByTagName(String name);
-	List<Post> findByUserId(Long id);
+	List<Post> findByTagsName(String tagName);
+    List<Post> findByTitleContaining(String title);
+    List<Post> findByAuthorId(Long authorId);
 }

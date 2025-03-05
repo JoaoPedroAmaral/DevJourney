@@ -15,47 +15,49 @@ import lombok.Data;
 public class User implements UserDetails {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(unique = true, nullable = false)
-	private String username;
-	
-	@Column(unique = true, nullable = false)
-	private String email;
-	
-	@Column(nullable = false)
-	private String password;
-	
-	@Enumerated(EnumType.STRING)
-	private Role role;
-	
-	@OneToMany(mappedBy = "author")
-	private List<Post> posts;
-	
-	
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return List.of(() -> "ROLE_" + role.name());
-	}
-	
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-	
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-	
-	@Override
-	public boolean isEnabled() {
-		return true;
-	}
+    @Column(unique = true, nullable = false)
+    private String username;
 
-	//GET and SET
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @OneToMany(mappedBy = "author")
+    private List<Post> posts;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(() -> "ROLE_" + role.name());
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
 	public Long getId() {
 		return id;
 	}
@@ -103,7 +105,8 @@ public class User implements UserDetails {
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
 	}
-
+    
+    
 	
 	
 	
