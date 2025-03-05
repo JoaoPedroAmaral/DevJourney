@@ -24,12 +24,12 @@ public class SecurityConfig {
             .formLogin(form -> form
                 .successHandler((request, response, authentication) -> {
                     response.setStatus(HttpStatus.OK.value()); // Retorna 200 ao logar
-                    response.getWriter().write("Login successful!");
+                    response.sendRedirect("/api/users");
                 })
                 .failureHandler((request, response, exception) -> {
                     response.setStatus(HttpStatus.UNAUTHORIZED.value()); // Retorna 401 se falhar
-                    response.getWriter().write("Login failed!");
                 })
+                .failureUrl("/login?error")
             );
 
         return http.build();
