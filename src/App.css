@@ -11,8 +11,13 @@
   src: url('./fonts/ttf/JetBrainsMono-Regular.ttf');
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   background-color: var(--primary-color);
+  color: aliceblue;
 }
 
 .AppDevJourneyTile{
@@ -25,7 +30,6 @@ body{
   width: 40px;
   border-radius: 100%;
   margin: 0 5px;
-  border: solid 3px var(--accent2-color);
 }
 
 .AppRight{
@@ -70,4 +74,28 @@ body{
 .AppRedesIcon{
   width: 40px;
   margin: 0 2px;
+}
+
+.AppSobreMim{
+  cursor: pointer;
+}
+
+/*Apresentaçao area*/
+.AppApresentacaoArea{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.AppApresentacaoLogo{
+  width: 500px;
+  border-radius: 100%;
+}
+
+.AppApresentacaoTexto{
+  color:var(--accent-color);
+  font-family: JetBrains;
+  width: 500px;
+  text-align: justify;
 }
