@@ -1,8 +1,7 @@
 :root{
-  --primary-color: #15121a;
+  --primary-color: #0f0a13;
   --accent-color: #9152FF;
-  --accent2-color:#cf36a1;
-  --pastel-color: #f8ce8a;
+  --acent2-color: #ff28ad;
   --secundary-color: #4B4555;
 }
 
@@ -10,26 +9,41 @@
   font-family: JetBrains;
   src: url('./fonts/ttf/JetBrainsMono-Regular.ttf');
 }
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html{
-  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent; 
+  overflow-x: hidden;
 }
 
 body{
   background-color: var(--primary-color);
   color: aliceblue;
+  background-size:100%;
+  background-position:center;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden{
+  display: none !important;
 }
 
 .AppDevJourneyTile{
   color: var(--accent-color);
   font-family: JetBrains;
   margin:0;
+  font-size: 40px;
+  user-select: none;
 }
 
 .AppLogo{
-  width: 40px;
+  width: 50px;
   border-radius: 100%;
   margin: 0 5px;
+  user-select: none;
 }
 
 .AppRight{
@@ -38,9 +52,13 @@ body{
 }
 
 .AppNav{
+  position:fixed;
   background-color: var(--primary-color);
-  box-shadow: 0px 2px 5px var(--accent2-color);
-  height: 60px;
+  border-bottom: 2px solid var(--accent-color);
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  height: 8vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,6 +68,7 @@ body{
   display: flex;
   align-items: center;
   margin: 0 5px;
+  user-select: none;
 }
 
 .AppBtnTheme{
@@ -69,33 +88,123 @@ body{
 
 .AppRedes{
   margin: 0 5px;
+  display: flex;
 }
 
 .AppRedesIcon{
   width: 40px;
   margin: 0 2px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .AppSobreMim{
   cursor: pointer;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(145, 82, 255, 0.5);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.AppSobreMimTexto{
+  width: 90vw;
 }
 
 /*Apresentaçao area*/
 .AppApresentacaoArea{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 20px 0;
 }
 
 .AppApresentacaoLogo{
   width: 500px;
-  border-radius: 100%;
+  border-radius: 100%;  
+  user-select: none;
 }
 
 .AppApresentacaoTexto{
   color:var(--accent-color);
   font-family: JetBrains;
-  width: 500px;
+  width: 88%;
+  padding: 0% 2%;
   text-align: justify;
+  margin: 0 0 20px 0;
+  font-size: 16px;
+
+}
+
+/*Menu do blog*/
+.AppMenu{
+  width: 100%;
+  height: 7vh;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AppMenuArea{
+  width: 90%;
+  height: 100%;
+  border-bottom: 2px solid var(--accent-color);
+  border-top: 2px solid var(--accent-color);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.AppCheckbox{
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.AppCheckbox:checked + .AppBtn{
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.AppBtn{
+  height: 100%;
+  width: 150px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: JetBrains;
+  color: var(--accent-color);
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.AppBtn:hover{
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.Postagens{
+  display: flex;
+  justify-content: center;
+  height: 200vh;
+}
+
+.PostArea{
+  width: 90%;
+  overflow-y: auto;
+}
+
+/*Footer*/
+.AppFooter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

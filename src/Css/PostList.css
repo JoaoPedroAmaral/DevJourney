@@ -1,0 +1,77 @@
+:root{
+  --primary-color: #0f0a13;
+  --accent-color: #9152FF;
+   --acent2-color: #ff28ad;
+  --secundary-color: #300820;
+}
+
+@font-face {
+  font-family: JetBrains;
+  src: url('../fonts/ttf/JetBrainsMono-Regular.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: 'IBM Plex Sans';
+}
+
+.PostCard{ 
+    width: 95%;
+    margin-bottom: 30px;
+    border: 2px solid var(--accent2-color);
+    padding: 2%;
+    border-radius: 10px;
+    background-color: var(--secundary-color);
+}
+
+
+.PostInput{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--accent2-color);
+    margin: 20px 0;
+    font-family: 'IBM Plex Sans';
+    font-weight: bold;
+    color: aliceblue;
+    width: 98%;
+    padding: 0 1%;
+    font-size: 16px;
+}
+
+.PostInput:focus{
+    border: none;
+    border-bottom: 2px solid var(--accent2-color);
+    outline: none;
+}
+
+.PostInput::placeholder{
+    color: rgb(156, 156, 156);
+}
+
+.PostTitle{
+    text-align: center;
+}
+
+.PostImgArea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.PostImg{
+    width: 100%;
+}
+
+.PostTags{
+    text-align: end;
+}
+
+.PostAuthor{
+    text-align: end;
+}
+
+.PostLink{
+    margin: 10px 0;
+    font-family: 'IBM Plex Sans';
+}

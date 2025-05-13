@@ -1,21 +1,32 @@
-import logo from "./Images/Logo.png";
+import logo from "./Images/Logo.svg";
 import theme from "./Images/theme.png";
 import github from "./Images/GitHub.png";
 import linkedin from "./Images/Ln.png";
 import about from "./Images/aboutMe.png";
 import "./App.css";
-import { useEffect, useRef } from "react";
-import { Link } from 'react-scroll';
+import "./Css/Animated.css";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-scroll";
+import PostList from './Pages/PostList.js'
+import ProjetoList from './Pages/Projetos.js'
+
 
 function App() {
   const typingRef = useRef(null);
-  const text = "Desenvolvedor Java com experiência em Spring Framework e MySQL para soluções back-end. Também atuo no front-end com HTML, CSS e JavaScript, criando interfaces dinâmicas e integradas.";
-  const typingDone = useRef(false); 
+  const [ativo, setAtivo] = useState("checkboxPostagens");
+
+  const text =
+    "Desenvolvedor Java, focado na criação de soluções back-end robustas e escaláveis, com experiência no ecossistema Spring (Spring Boot, Spring Data, etc.), Maven, JWT e mais. Tambem conhecimento em banco de dados MySQL. No front-end, atuo com HTML/CSS, React e JavaScript, desenvolvendo interfaces responsivas, dinâmicas e integradas às APIs. Busco sempre alinhar boa arquitetura com código limpo e manutenção eficiente.";
+  const typingDone = useRef(false);
   const sobreMimRef = useRef(null);
 
+  const handleChangeArea = (id) => {
+      setAtivo(id);
+    };
+
   useEffect(() => {
-    if (typingDone.current) return; 
-    typingDone.current = true; 
+    if (typingDone.current) return;
+    typingDone.current = true;
 
     const ref = typingRef.current;
     if (!ref) return;
@@ -27,24 +38,22 @@ function App() {
       if (i < text.length) {
         ref.textContent += text.charAt(i);
         i++;
-        setTimeout(typeWriter, 100); 
+        setTimeout(typeWriter, 20);
       }
     };
 
-    typeWriter(); 
-  }, [text]); 
-
+    typeWriter();
+  }, [text]);
 
   const scrollToSobreMim = () => {
-    const element = document.getElementById('Sobre-mim');
+    const element = document.getElementById("Sobre-mim");
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
-
 
   return (
     <div className="App">
@@ -71,29 +80,127 @@ function App() {
           >
             <img className="AppRedesIcon" src={linkedin} />
           </a>
-          <Link title="Sobre mim"
+          <Link
+            title="Sobre mim"
             to="Sobre-mim"
             smooth={true}
-            duration={500}       // Duração em ms
-            offset={-50}        // Ajuste de posição
+            duration={500} 
+            offset={-50}
             spy={true}
-            className="AppSobreMim">
+            className="AppRedesIcon"
+          >
             <img className="AppRedesIcon" src={about} />
           </Link>
         </div>
       </div>
 
-      <div className="AppApresentacaoArea">
-        <div>
-          <img className="AppApresentacaoLogo" src={logo} />
-          <p className="AppApresentacaoTexto" ref={typingRef}></p>
+      <div className="AppApresentacaoArea"><div className="starfall">
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+          <div className="falling-star"></div>
+        </div>
+        <img className="AppApresentacaoLogo" src={logo} />
+        <p className="AppApresentacaoTexto" ref={typingRef}></p>
+      </div>
+
+      <div className="AppMenu">
+        <div className="AppMenuArea">
+            <input 
+              type="checkbox"
+              checked={ativo === "checkboxPostagens"}
+              onChange={() => handleChangeArea("checkboxPostagens")}
+              className="AppCheckbox"
+              id="checkboxPostagens"
+            ></input>
+            <label className="AppBtn" htmlFor="checkboxPostagens">
+              Postagem
+            </label>
+            <input 
+              type="checkbox"
+              checked={ativo === "checkboxProjetos"}
+              onChange={() => handleChangeArea("checkboxProjetos")}
+              className="AppCheckbox"
+              id="checkboxProjetos"
+            ></input>
+            <label className="AppBtn" htmlFor="checkboxProjetos">
+              Projetos
+            </label>
+            <input 
+              type="checkbox"
+              checked={ativo === "checkboxCarreira"}
+              onChange={() => handleChangeArea("checkboxCarreira")}
+              className="AppCheckbox"
+              id="checkboxCarreira"
+            ></input>
+            <label className="AppBtn" htmlFor="checkboxCarreira">
+              Carreira
+            </label>
+            <input 
+              type="checkbox"
+              checked={ativo === "checkboxRedes"}
+              onChange={() => handleChangeArea("checkboxRedes")}
+              className="AppCheckbox"
+              id="checkboxRedes"
+            ></input>
+            <label className="AppBtn" htmlFor="checkboxRedes">
+              Redes
+            </label>
         </div>
       </div>
-      
-      <div className="AppSobreMim" id="Sobre-mim">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit sodales urna vel faucibus. Mauris suscipit porttitor risus quis gravida. Cras et consequat lacus, et dapibus mauris. Sed vestibulum feugiat scelerisque. Nulla facilisi. Sed id dictum enim. Cras vel ante eu nisl tristique accumsan. Maecenas tempus tortor dolor, et sodales ligula scelerisque eget. Ut dapibus nisi ut tempus posuere. Suspendisse ac sodales felis. Donec in pulvinar orci.
 
-Nunc sit amet pretium tortor. Morbi volutpat at ipsum id rhoncus. Suspendisse lacinia sit amet nisl vel rhoncus. Sed tincidunt faucibus tellus a ornare. Nulla accumsan sapien sed ante ultrices maximus. Praesent semper porta magna, quis iaculis ligula aliquam a. Mauris pharetra dignissim lectus, in rhoncus ipsum euismod a. Cras vel lorem neque. Mauris sollicitudin imperdiet neque, sit amet molestie arcu molestie id. In facilisis, metus et maximus pulvinar, est diam blandit odio, eu molestie tellus mi sed ipsum. Suspendisse eleifend nulla quis odio gravida mollis. Vivamus eleifend massa sed neque accumsan, eu porta augue tincidunt. Nullam dolor lectus, aliquam vel ullamcorper sit amet, aliquet sit amet lacus. Duis interdum, ante in varius faucibus, diam lacus congue orci, sed consectetur justo ipsum et ipsum. Nullam lectus augue, finibus non est vel, venenatis consectetur nibh.</p>
+      <div className="Postagens">
+        <div className={ativo == "checkboxPostagens" ? "PostArea" : "PostArea hidden"}>
+          <PostList/>
+        </div>
+
+        <div className={ativo == "checkboxProjetos" ? "PostArea" : "PostArea hidden"}>
+          <ProjetoList/>
+        </div>
+      </div>
+
+      <div className="AppSobreMim" id="Sobre-mim">
+        <div>
+          <p className="AppSobreMimTexto">Me chamo João Pedro, sou apaixonado por tecnologia, gosto de transformar ideias em aplicações funcionais, buscando sempre escrever um código limpo, organizado e de fácil manutenção. Além do desenvolvimento, tenho interesse em arquitetura de software, boas práticas de programação e automação de processos </p>
+          <p className="AppSobreMimTexto">
+          Sou desenvolvedor Java com sólida experiência em Spring Framework, JPA/Hibernate e bancos de dados MySQL, focado no desenvolvimento de soluções back-end robustas e escaláveis. Também atuo no front-end com HTML, CSS e JavaScript, criando interfaces dinâmicas e integradas que oferecem uma boa experiência ao usuário. Começei na area de programação em 2022, achando que criar um programa era só digitar uma linha de código e pronto! O site estava feito, OBVIO QUE NÂO! Ao entrar neste mundo percebi onde estava me metendo e o que era pra me assustar me fez ficar cada vez mais interessado na area.</p>
+
+          <p className="AppSobreMimTexto">Atualmente, estou envolvido em projetos que conectam back-end e front-end de forma eficiente, com atenção especial à segurança, performance e usabilidade. Participo das comunidades Java, projetos OpenSource e bicos sempre que precisarem.
+          </p>
+          <div className="AppFooter">
+             <p>&copy; 2025 João Pedro Amaral Rosa. Todos os direitos reservados.</p>
+          </div>
+        </div>
       </div>
     </div>
   );
