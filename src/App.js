@@ -9,6 +9,10 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import PostList from './Pages/PostList.js'
 import ProjetoList from './Pages/Projetos.js'
+import Carreira from './Pages/Carreira.js'
+import Redes from './Pages/Redes.js'
+
+
 
 
 function App() {
@@ -187,6 +191,15 @@ function App() {
         <div className={ativo == "checkboxProjetos" ? "PostArea" : "PostArea hidden"}>
           <ProjetoList/>
         </div>
+          
+        <div className={ativo == "checkboxCarreira" ? "PostArea" : "PostArea hidden"}>
+          <Carreira/>
+        </div>
+
+        <div className={ativo == "checkboxRedes" ? "PostArea" : "PostArea hidden"}>
+          <Redes/>
+        </div>
+
       </div>
 
       <div className="AppSobreMim" id="Sobre-mim">

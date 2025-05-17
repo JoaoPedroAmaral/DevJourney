@@ -7,7 +7,7 @@ const ProjetoList = () => {
 
   useEffect(() => {
     const fetchPosts = () => {
-      fetch("http://localhost:8080/api/posts")
+      fetch("https://devjourneybackend.onrender.com/api/posts")
         .then((response) => response.json())
         .then((data) => {
           const filtered = data
@@ -56,13 +56,15 @@ const ProjetoList = () => {
             <a href={post.link}>{post.link}</a>
           </div>
 
+          {post.image && post.image !== "" &&(
           <div className="PostImgArea">
             <img
-              src={`http://localhost:8080/api/posts/${post.id}/image`}
+              src={`https://devjourneybackend.onrender.com/api/posts/${post.id}/image`}
               alt="Post"
               className="PostImg"
             />
           </div>
+        )}
 
           <p className="PostAuthor">
             <strong>Usuário:</strong> {post.author?.username}
