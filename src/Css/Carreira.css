@@ -1,63 +1,62 @@
-:root{
+:root {
   --primary-color: #0f0a13;
-  --accent-color: #9152FF;
-   --acent2-color: #ff28ad;
-  --secundary-color: #180931;
-  --white-color:#f5f5f5;
-    --Yellow-color:#FE8600;
-  --WhiteYellow-color:#FDCE56;
+  --Text-Primary-Color: #9152ff;
+  --Text-Secondary-Color: #ff28ad;
+  --Post-Background-Color: #180931;
+  --Text-Color: #f5f5f5;
+  --Text-Tertiary-Color: #fe8600;
+  --Text-Quaternary-Color: #fdce56;
 }
 
 @font-face {
   font-family: JetBrains;
-  src: url('../fonts/ttf/JetBrainsMono-Regular.ttf');
+  src: url("../fonts/ttf/JetBrainsMono-Regular.ttf");
 }
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-body{
-    font-family: 'IBM Plex Sans';
-}
-
-.PostTitleCarreira{
-    color:var(--accent-color);
-    font-family: JetBrains;
-    text-align: center;
-    font-weight: bold;
+body {
+  font-family: "IBM Plex Sans";
 }
 
-.PostContentCarreira{
-    font-size: 18px;
-    text-align: justify;
-    text-align: justify;
-    font-weight: bold;
-}
-
-.TitlesJobh2{
+.PostTitleCarreira {
+  color: var(--Text-Primary-Color);
   font-family: JetBrains;
-  color:var(--Yellow-color);
+  text-align: center;
+  font-weight: bold;
 }
 
-.CarreiraContent{
+.PostContentCarreira {
+  font-size: 18px;
+  text-align: justify;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.TitlesJobh2 {
+  font-family: JetBrains;
+  color: var(--Text-Tertiary-Color);
+}
+
+.CarreiraContent {
   padding-bottom: 20px;
-  border-bottom: 2px solid var(--Yellow-color);
+  border-bottom: 2px solid var(--Text-Tertiary-Color);
 }
 
-.TitlesJob{
-  color:var(--WhiteYellow-color);
+.TitlesJob {
+  color: var(--Text-Quaternary-Color);
 }
 
 ul {
   list-style-type: none;
   padding: 0; /* Remover padding padrão da lista */
-  margin: 0;  /* Remover margin padrão da lista */
+  margin: 0; /* Remover margin padrão da lista */
 }
 
-li::before{
+li::before {
   content: "🦝";
   margin: 0 0.5em; /* Adicionar espaço entre o emoji e o texto */
-
 }
 
-a{
-  color:var(--acent2-color);
+a {
+  color: var(--Text-Secondary-Color);
 }

@@ -1,79 +1,79 @@
-:root{
+:root {
   --primary-color: #0f0a13;
-  --accent-color: #9152FF;
-   --acent2-color: #ff28ad;
-  --secundary-color: #180931;
-  --white-color:#f5f5f5;
-    --Yellow-color:#FE8600;
-  --WhiteYellow-color:#FDCE56;
+  --Text-Primary-Color: #9152ff;
+  --Text-Secondary-Color: #ff28ad;
+  --Post-Background-Color: #180931;
+  --Text-Color: #f5f5f5;
+  --Text-Tertiary-Color: #fe8600;
+  --Text-Quaternary-Color: #fdce56;
 }
 
 @font-face {
   font-family: JetBrains;
-  src: url('../fonts/ttf/JetBrainsMono-Regular.ttf');
+  src: url("../fonts/ttf/JetBrainsMono-Regular.ttf");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-body{
-    font-family: 'IBM Plex Sans';
+body {
+  font-family: "IBM Plex Sans";
 }
 
-.PostCard{ 
-    width: 95%;
-    margin-bottom: 30px;
-    border: 2px solid var(--accent-color);
-    padding: 2%;
-    border-radius: 5px;
-    background-color: var(--secundary-color);
+.PostCard {
+  width: 95%;
+  margin-bottom: 30px;
+  border: 2px solid var(--Text-Primary-Color);
+  padding: 2%;
+  border-radius: 5px;
+  background-color: var(--Post-Background-Color);
 }
 
-
-.PostInput{
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--white-color);
-    background-color: rgba(255, 255, 255, 0.2);
-    margin: 20px 0;
-    font-family: 'IBM Plex Sans';
-    font-weight: bold;
-    color: aliceblue;
-    width: 98%;
-    padding: 1%;
-    font-size: 16px;
+.PostInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--Text-Color);
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 20px 0;
+  font-family: "IBM Plex Sans";
+  font-weight: bold;
+  color: aliceblue;
+  width: 98%;
+  padding: 1%;
+  font-size: 16px;
 }
 
-.PostInput:focus{
-    border: none;
-    border-bottom: 2px solid var(--white-color);
-    outline: none;
+.PostInput:focus {
+  border: none;
+  border-bottom: 2px solid var(--Text-Color);
+  outline: none;
 }
 
-.PostInput::placeholder{
-    color: rgb(156, 156, 156);
+.PostInput::placeholder {
+  color: rgb(156, 156, 156);
 }
 
-.PostTitle{
-    text-align: center;
-    font-family: JetBrains;
+.PostTitle {
+  text-align: center;
+  font-family: JetBrains;
 }
 
-.PostImgArea{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.PostImgArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.PostImg{
-    width: 100%;
+.PostImg {
+  width: 100%;
 }
 
-.PostTags, .PostAuthor{
-    text-align: end;
-    font-family: JetBrains;
+.PostTags,
+.PostAuthor {
+  text-align: end;
+  font-family: JetBrains;
 }
 
-.PostLink{
-    margin: 10px 0;
-    font-family: 'IBM Plex Sans';
+.PostLink {
+  margin: 10px 0;
+  font-family: "IBM Plex Sans";
 }

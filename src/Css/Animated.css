@@ -1,9 +1,7 @@
 :root{
   --primary-color: #0f0a13;
-  --accent-color: #9152FF;
-  --accent2-color:#cf36a1;
-  --pastel-color: #f8ce8a;
-  --secundary-color: #4B4555;
+  --Text-Primary-Color: #9152FF;
+  --Text-Secondary-Color:#cf36a1;
 }
 
 @media only screen and (max-width: 600px) {
@@ -23,12 +21,12 @@
     transform-style: preserve-3d;
     -webkit-perspective: 1000px;
     perspective: 1000px;
-    z-index: 0;
+    z-index: -1;
 }
 .starfall .falling-star {
     width: 8px;
     height: 8px;
-    background: var(--accent-color);
+    background: var(--Text-Primary-Color);
     position: absolute;
     border-radius: 50%;
     opacity: 0.5;

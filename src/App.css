@@ -1,11 +1,11 @@
 :root{
   --primary-color: #0f0a13;
-  --accent-color: #9152FF;
-   --acent2-color: #ff28ad;
-  --secundary-color: #180931;
-  --white-color:#f5f5f5;
-    --Yellow-color:#FE8600;
-  --WhiteYellow-color:#FDCE56;
+  --Text-Primary-Color: #9152FF;
+  --Text-Secondary-Color: #ff28ad;
+  --Post-Background-Color: #180931;
+  --Text-Color:#f5f5f5;
+  --Text-Tertiary-Color:#FE8600;
+  --Text-Quaternary-Color:#FDCE56;
 }
 
 @font-face {
@@ -16,7 +16,7 @@
 
 html{
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-color) transparent; 
+  scrollbar-color: var(--Text-Primary-Color) transparent; 
   overflow-x: hidden;
 }
 
@@ -35,7 +35,7 @@ body{
 }
 
 .AppDevJourneyTile{
-  color: var(--accent-color);
+  color: var(--Text-Primary-Color);
   font-family: JetBrains;
   margin:0;
   font-size: 40px;
@@ -57,7 +57,7 @@ body{
 .AppNav{
   position:fixed;
   background-color: var(--primary-color);
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--Text-Primary-Color);
   width: 100%;
   top: 0;
   z-index: 1;
@@ -130,14 +130,22 @@ body{
   user-select: none;
 }
 
+
 .AppApresentacaoTexto{
-  color:var(--accent-color);
+  color:var(--Text-Primary-Color);
   font-family: JetBrains;
-  width: 88%;
+  width: 100%;
   padding: 0% 2%;
   text-align: justify;
   margin: 0 0 20px 0;
   font-size: 16px;
+  user-select: none;
+}
+
+.AppWarning{
+  text-align: center;
+  font-family: 'IBM Plex Sans';
+  color: var(--Text-Secondary-Color);
 
 }
 
@@ -154,8 +162,8 @@ body{
 .AppMenuArea{
   width: 90%;
   height: 100%;
-  border-bottom: 2px solid var(--accent-color);
-  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--Text-Primary-Color);
+  border-top: 2px solid var(--Text-Primary-Color);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -169,7 +177,7 @@ body{
 }
 
 .AppCheckbox:checked + .AppBtn{
-  background-color: var(--accent-color);
+  background-color: var(--Text-Primary-Color);
   color: var(--primary-color);
 }
 
@@ -181,7 +189,7 @@ body{
   align-items: center;
   justify-content: center;
   font-family: JetBrains;
-  color: var(--accent-color);
+  color: var(--Text-Primary-Color);
   font-weight: bold;
   background-color: transparent;
   border: none;
@@ -190,7 +198,7 @@ body{
 }
 
 .AppBtn:hover{
-  background-color: var(--accent-color);
+  background-color: var(--Text-Primary-Color);
   color: var(--primary-color);
 }
 
@@ -210,4 +218,40 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.ColorPickerDropdown {
+  background-color: var(--primary-color);
+  border: 1px solid var(--Text-Primary-Color);
+  padding: 10px;
+  margin: 0 10px;
+  margin-top: 10vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1;
+}
+
+.ColorInputGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--Text-Color);
+}
+
+.ColorInputGroup label {
+  font-size: 0.8rem;
+  font-family: "IBM Plex Sans";
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.AppColorInput{
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100px;
 }
