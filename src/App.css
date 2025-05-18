@@ -18,6 +18,7 @@ html{
   scrollbar-width: thin;
   scrollbar-color: var(--Text-Primary-Color) transparent; 
   overflow-x: hidden;
+  color: var(--Text-Color);
 }
 
 body{

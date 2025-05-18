@@ -52,7 +52,7 @@ const PostList = () => {
             {post.content}
           </p>
 
-          {post.image && post.image !== "" &&(
+          {post.image_url !== "" &&(
           <div className="PostImgArea">
             <img
               src={`https://devjourneybackend.onrender.com/api/posts/${post.id}/image`}
