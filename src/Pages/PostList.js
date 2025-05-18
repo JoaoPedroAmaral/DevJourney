@@ -52,14 +52,18 @@ const PostList = () => {
             {post.content}
           </p>
 
-          {post.image_url !== "" &&(
-          <div className="PostImgArea">
-            <img
-              src={`https://devjourneybackend.onrender.com/api/posts/${post.id}/image`}
-              alt="Post"
-              className="PostImg"
-            />
+          <div className="PostLink">
+            <a href={post.link}>{post.link}</a>
           </div>
+          
+          {post.image_url !== "" && (
+            <div className="PostImgArea">
+              <img
+                src={`https://devjourneybackend.onrender.com/api/posts/${post.id}/image`}
+                alt="Post"
+                className="PostImg"
+              />
+            </div>
           )}
 
           <p className="PostAuthor">
