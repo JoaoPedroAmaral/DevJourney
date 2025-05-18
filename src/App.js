@@ -77,7 +77,15 @@ function App() {
           </div>
         </div>
 
-        <h1 className="AppDevJourneyTile">DevJourney</h1>
+        <Link
+          to="Inicio"
+          smooth={true}
+          duration={500}
+          offset={-50}
+          spy={true}
+        >
+          <h1 className="AppDevJourneyTile">DevJourney</h1>
+        </Link>
 
         <div className="AppRedes">
           <a title="GitHub" href="https://github.com/JoaoPedroAmaral">
@@ -96,7 +104,6 @@ function App() {
             duration={500}
             offset={-50}
             spy={true}
-            className="AppRedesIcon"
           >
             <img className="AppRedesIcon" src={about} />
           </Link>
@@ -119,7 +126,7 @@ function App() {
         </div>
       )}
 
-      <div className="AppApresentacaoArea">
+      <div className="AppApresentacaoArea" id="Inicio">
         <div className="starfall">
           <div className="falling-star"></div>
           <div className="falling-star"></div>
